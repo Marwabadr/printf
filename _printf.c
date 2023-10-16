@@ -1,19 +1,18 @@
-#include "main.h"
+#include "printf_customer"
 /**
- * _printf - printf function.
- * @format: variable
- *
- * Return: nbytes printed.
+ * _printf - function alike printf
+ * @format: formatted string var
+ * Return: printed chars
  */
 int _printf(const char *format, ...)
 {
-	va_list list;
-	unsigned int i = 0, characters_number = 0;
+	va_list vaList;
+	unsigned int i = 0, cn  = 0;
 
 	if (!format)
 		return (-1);
 
-	va_start(list, format);
+	va_start(vaList, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -24,53 +23,52 @@ int _printf(const char *format, ...)
 			else if (format[i + 1] == '%')
 			{
 				_putchar('%');
-				characters_number++;
+				cn++;
 				i++;
 			}
-			else if (cmp_func(format[i + 1]) != NULL)
+			else if (f_printFunc(format[i + 1]) != NULL)
 			{
-				characters_number += (cmp_func(format[i + 1]))(list);
+				cn += (f_printFunc(format[i + 1]))(vaList);
 				i++;
 			}
 			else
 			{
 				_putchar(format[i]);
-				characters_number++;
+				cn++;
 			}
 		}
 		else
 		{
 			_putchar(format[i]);
-			characters_number++;
+			cn++;
 		}
 	}
-	va_end(list);
-	return (characters_number);
+	va_end(vaList);
+	return (cn);
 }
 
 /**
- * cmp_func - Entry point
- * @a: character.
- *
- * Return: 0.
+ * f_printFunc - find print functions
+ * @t: var
+ * Return: returns 0
  */
-int (*cmp_func(const char a))(va_list)
+int (*f_printFunc(const char t))(va_list)
 {
-	print_f printf[] = {
-		{'c', printc},
-		{'s', print_string},
-		{'d', print_n},
-		{'i', print_n},
+	specStruct  printf[] = {
+		{'c', printChar},
+		{'s', printString},
+		{'d', printNumbers},
+		{'i', printNumbers},
 		{'\0', NULL}
 	};
 
-	int k;
+	int cpt;
 
-	for (k = 0; printf[k].p != '\0'; k++)
+	for (cpt = 0; printf[cpt].specPtr != '\0'; k++)
 	{
-		if (printf[k].p == a)
+		if (printf[cpt].specPtr == t)
 		{
-			return (printf[k].func);
+			return (printf[specPtr].specFunc);
 		}
 	}
 

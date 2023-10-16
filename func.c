@@ -1,95 +1,91 @@
-#include "main.h"
+#include "printf_customer.h"
 /**
- * _putchar - Entry function. Write characteres
- * @c: variable va_list
- *
- * Return: Writed character
+ * _putchar - write chars
+ * @c: valist variable
+ * Return: output
  */
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
 /**
- * printc - Entry function. Print character
- * @list: variable va_list
- *
- * Return: 1 (nbyte)
+ * printChar - printCharacter
+ * @char_arg: valist var
+ * Return: returns 1
  */
-int printc(va_list list)
+int printChar(va_list char_arg)
 {
-	_putchar(va_arg(list, int));
+	_putchar(va_arg(char_arg, int));
 	return (1);
 
 }
 /**
- * print_string - Entry point. Print string
- * @s: variable va_list
- *
- * Return: k (nbytes) 6 (NULL)
+ * printString - printString
+ * @string_arg: string valist var
+ * Return: returns i else 6 if NUll
  */
-int print_string(va_list s)
+int printString(va_list string_arg)
 {
-	char *str;
-	int k;
+	char *stringPtr;
+	int i;
 
-	str = va_arg(s, char*);
-	if (str == NULL)
+	stringPtr = va_arg(string_arg, char*);
+	if (stringPtr == NULL)
 	{
 		write(1, "(null)", 6);
 		return (6);
 	}
 	else
 	{
-		for (k = 0; str[k] != '\0'; k++)
+		for (i = 0; stringPtr[i] != '\0'; i++)
 		{
-			_putchar(str[k]);
+			_putchar(stringPtr[i]);
 		}
 	}
-	return (k);
+	return (i);
 }
 /**
- * print_n - Entry point. Print number
- * @n: Variable va_list
- *
- * Return: count (nbytes)
+ * printNumbers - printNumber
+ * @num_arg: valist number var
+ * Return: returns cpt
  */
-int print_n(va_list n)
+int printNumbers(va_list num_arg)
 {
 
-	long int number;
-	int counter, aux_variable, base;
+	long int num;
+	int cpt, avar, bs;
 
-	counter = 0;
-	number = va_arg(n, int);
+	cpt = 0;
+	num = va_arg(num_arg, int);
 
-	if (number < 0)
+	if (num < 0)
 	{
-		number *= -1;
+		num *= -1;
 		_putchar(45);
-		counter++;
+		cpt++;
 	}
-	if (number >= 0 && number <= 9)
+	if (num >= 0 && num <= 9)
 	{
-		_putchar(number + 48);
-		counter++;
+		_putchar(num + 48);
+		cpt++;
 	}
-	if (number > 9)
+	if (num > 9)
 	{
-		base = 10;
+		bs = 10;
 
-		while (number / base > 9)
+		while (num / bs > 9)
 		{
-			base *= 10;
+			bs *= 10;
 		}
 
-		while (base > 0)
+		while (bs > 0)
 		{
-			aux_variable = number / base;
-			number = number % base;
-			_putchar(aux_variable + 48);
-			base = base / 10;
-			counter++;
+			avar = num / bs;
+			num = num % bs;
+			_putchar(avar + 48);
+			bs = bs / 10;
+			cpt++;
 		}
 	}
-	return (counter);
+	return (cpt);
 }
