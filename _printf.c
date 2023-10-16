@@ -64,7 +64,7 @@ int (*f_printFunc(const char t))(va_list)
 
 	int cpt;
 
-	for (cpt = 0; printf[cpt].specPtr != '\0'; k++)
+	for (cpt = 0; printf[cpt].specPtr != '\0'; cpt++)
 	{
 		if (printf[cpt].specPtr == t)
 		{
