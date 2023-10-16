@@ -24,5 +24,6 @@ int printChar(va_list char_arg);
 int printString(va_list string_arg);
 int (*f_printFunc(const char t))(va_list);
 int printNumbers(va_list num_arg);
+int convertedIntToBinary(va_list inter);
 
 #endif

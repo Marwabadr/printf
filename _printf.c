@@ -59,6 +59,7 @@ int (*f_printFunc(const char t))(va_list)
 		{'s', printString},
 		{'d', printNumbers},
 		{'i', printNumbers},
+		{'b', convertedIntToBinary},
 		{'\0', NULL}
 	};
 
