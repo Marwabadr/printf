@@ -1,13 +1,5 @@
 #include "main.h"
-/**
- * _putchar - write chars
- * @c: valist variable
- * Return: output
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
+
 /**
  * printUnsigned - print Unsigned Int
  * @unsign_arg: unsigned argument
@@ -64,7 +56,7 @@ int printOctal(va_list oct_arg)
 }
 
 /**
- * printHexa - print Number Hexadecimal
+ * printHexa - print Hexadecimal
  * @hexa_arg: hexadecimal argument
  * Return: returns cmpt
  */
