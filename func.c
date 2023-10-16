@@ -124,4 +124,5 @@ int convertedIntToBinary(va_list inter)
     }
 
     return numbin;
-}2510
+}
+
