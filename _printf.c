@@ -68,7 +68,7 @@ int (*f_printFunc(const char t))(va_list)
 	{
 		if (printf[cpt].specPtr == t)
 		{
-			return (printf[specPtr].specFunc);
+			return (printf[cpt].specFunc);
 		}
 	}
 
