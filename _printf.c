@@ -60,6 +60,7 @@ int (*f_printFunc(const char t))(va_list)
 		{'d', printNumbers},
 		{'i', printNumbers},
 		{'b', convertedIntToBinary},
+		{'u', printUnsigned},
 		{'\0', NULL}
 	};
 
