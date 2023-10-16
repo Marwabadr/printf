@@ -27,8 +27,8 @@ int printUnsigned(va_list unsign_arg)
 }
 
 /**
- * printOctal - printOctal
- * @octal_arg: va_list var
+ * printOctal - printNumberOctal
+ * @oct_arg: octal argument
  * Return: returns cmpt
  */
 
@@ -56,7 +56,7 @@ int printOctal(va_list oct_arg)
 
 /**
  * printHexa - printHexadecimal
- * @hexa_arg: va_list var
+ * @hexa_arg: hexadecimal argument
  * Return: returns cmpt
  */
 int printHexa(va_list hexa_arg)
@@ -86,7 +86,7 @@ int printHexa(va_list hexa_arg)
 
 /**
  * printHexaUppercase - printHexadecimalUppercase
- * @hexaUp_arg: va_list var
+ * @hexaUp_arg: hexadecimal argument
  * Return: returns cmpt
  */
 int printHexaUppercase(va_list hexaUp_arg)
