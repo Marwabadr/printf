@@ -25,3 +25,91 @@ int printUnsigned(va_list unsign_arg)
 	}
 	return (cpt);
 }
+
+/**
+ * printOctal - printOctal
+ * @octal_arg: va_list var
+ * Return: returns cmpt
+ */
+
+int printOctal(va_list oct_arg)
+{
+    unsigned int var = va_arg(oct_arg, unsigned int);
+    int cmpt = 0;
+
+    if (var == 0)
+    {
+        _putchar('0');
+        return 1;
+    }
+
+    while (var > 0)
+    {
+        int test = var % 8;
+        _putchar('0' + test);
+        var /= 8;
+        cmpt++;
+    }
+
+    return cmpt;
+}
+
+/**
+ * printHexa - printHexadecimal
+ * @hexa_arg: va_list var
+ * Return: returns cmpt
+ */
+int printHexa(va_list hexa_arg)
+{
+    unsigned int numb = va_arg(hexa_arg, unsigned int);
+    int cmpt = 0;
+
+    if (numb == 0)
+    {
+        _putchar('0');
+        return 1;
+    }
+
+    while (numb > 0)
+    {
+        int test = numb % 16;
+        if (test < 10)
+            _putchar('0' + test);
+        else
+            _putchar('a' + test - 10);
+        numb /= 16;
+        cmpt++;
+    }
+
+    return cmpt;
+}
+
+/**
+ * printHexaUppercase - printHexadecimalUppercase
+ * @hexaUp_arg: va_list var
+ * Return: returns cmpt
+ */
+int printHexaUppercase(va_list hexaUp_arg)
+{
+    unsigned int numb = va_arg(hexaUp_arg, unsigned int);
+    int cmpt = 0;
+
+    if (numb == 0)
+    {
+        _putchar('0');
+        return 1;
+    }
+
+    while (numb > 0)
+    {
+        int test = numb % 16;
+        if (test < 10)
+            _putchar('0' + test);
+        else
+            _putchar('A' + test - 10);
+        numb /= 16;
+        cmpt++;
+    }
+
+    return cmpt;
+}

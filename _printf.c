@@ -61,6 +61,9 @@ int (*f_printFunc(const char t))(va_list)
 		{'i', printNumbers},
 		{'b', convertedIntToBinary},
 		{'u', printUnsigned},
+		{'o', printOctal},
+	        {'x', printHex},
+		{'X', printHexaUppercase},
 		{'\0', NULL}
 	};
 

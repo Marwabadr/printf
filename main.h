@@ -26,5 +26,8 @@ int (*f_printFunc(const char t))(va_list);
 int printNumbers(va_list num_arg);
 int convertedIntToBinary(va_list int_arg);
 int printUnsigned(va_list unsign_arg);
+int printOctal(va_list oct_arg);
+int printHexa(va_list hexa_arg);
+int printHexaUppercase(va_list hexaUp_arg);
 
 #endif
