@@ -92,7 +92,7 @@ int printNumbers(va_list num_arg)
 
 /**
  * convertedIntToBinary - conversionUnsignedIntIntoBinary
- * @int_arg: va_li var
+ * @int_arg: va_list var
  * Return: returns numbin
  */
 
