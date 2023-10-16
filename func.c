@@ -89,23 +89,24 @@ int printNumbers(va_list num_arg)
 	}
 	return (cpt);
 }
-
 /**
  * convertedIntToBinary - conversionUnsignedIntIntoBinary
  * @int_arg: va_list var
  * Return: returns numbin
  */
 
-int convertedIntToBinary(va_list inter)
+int convertedIntToBinary(va_list int_arg)
 {
-    unsigned int var = va_arg(inter, unsigned int);
+    unsigned int var = va_arg(int_arg, unsigned int);
+
     int res[32];
 
-    int j,numbin = 0;
+    int j, numbin = 0;
+
     if (var == 0)
     {
         _putchar('0');
-        return 1;
+        return (1);
     }
 
     for (j = 0; j < 32; j++)
@@ -123,5 +124,5 @@ int convertedIntToBinary(va_list inter)
         }
     }
 
-    return numbin;
+    return (numbin);
 }
