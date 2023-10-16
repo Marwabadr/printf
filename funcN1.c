@@ -1,6 +1,15 @@
 #include "main.h"
 /**
- * printUnsigned - printUnsignedInt
+ * _putchar - write chars
+ * @c: valist variable
+ * Return: output
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+/**
+ * printUnsigned - print Unsigned Int
  * @unsign_arg: unsigned argument
  * Return: returns cpt
  */
@@ -27,7 +36,7 @@ int printUnsigned(va_list unsign_arg)
 }
 
 /**
- * printOctal - printNumberOctal
+ * printOctal - print Number Octal
  * @oct_arg: octal argument
  * Return: returns cmpt
  */
@@ -55,7 +64,7 @@ int printOctal(va_list oct_arg)
 }
 
 /**
- * printHexa - printHexadecimal
+ * printHexa - print Number Hexadecimal
  * @hexa_arg: hexadecimal argument
  * Return: returns cmpt
  */
@@ -85,7 +94,7 @@ int printHexa(va_list hexa_arg)
 }
 
 /**
- * printHexaUppercase - printHexadecimalUppercase
+ * printHexaUppercase - print Hexadecimal Uppercase
  * @hexaUp_arg: hexadecimal argument
  * Return: returns cmpt
  */
